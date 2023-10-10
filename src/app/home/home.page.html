@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>SkeletonAPP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-text-center">
+    <h1>Bienvenido!</h1>
+  </div>
+  <p>Usuario: {{ usu }}</p>
+
+  <h2 class="ion-text-center">Informacion Adicional</h2>
+
+  <ion-list>
+    <ion-item>
+      <ion-input label="Nombre" placeholder="Ingrese Nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Apellido" placeholder="Ingrese Apellido"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-select
+        class="never-flip"
+        toggleIcon="caret-down-sharp"
+        interface="popover"
+        label="Nivel de Educacion"
+        placeholder="Nivel Educacional"
+      >
+        <ion-select-option value="Basico">Basico</ion-select-option>
+        <ion-select-option value="Medio">Medio</ion-select-option>
+        <ion-select-option value="Superior">Superior</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-datetime-button
+      displayFormat="MM DD YY"
+      datetime="datetime"
+    ></ion-datetime-button>
+
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="datetime"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+  </ion-list>
+
+  <h3 class="titulo ion-text-center">SKELETON</h3>
+  <ion-button (click)="animateHeader()" expand="block" fill="clear" shape="round">
+    ANIMAR SKELETON
+  </ion-button>
+</ion-content>
